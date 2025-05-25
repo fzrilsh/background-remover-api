@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 import cv2
 import numpy as np
 from flask import Flask, request, send_file, jsonify
@@ -8,12 +9,14 @@ import logging
 import os
 from werkzeug.utils import secure_filename
 
+load_dotenv()
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=os.getenv("ALLOWED_ORIGINS", "").split(','))
 
 # Configuration
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
