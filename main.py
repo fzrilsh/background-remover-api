@@ -295,4 +295,4 @@ if __name__ == '__main__':
     print(f"   Supported formats: {', '.join(ALLOWED_EXTENSIONS)}")
     print("=" * 60)
     
-    app.run(host='0.0.0.0', port=8000, debug=False)
+    app.run(host='0.0.0.0', port=80, debug=False)
