@@ -1,0 +1,3 @@
+passenger_wsgi.py
+venv/
+tmp/
